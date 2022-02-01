@@ -92,12 +92,6 @@ function refreshUI() {
         petImg.src = "images/middle.jpg";
 
     }
-
-
-
-
-
-
 }
 
 setInterval(decreaseBelly, 1500);
