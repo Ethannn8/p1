@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body style="height:500px; width:1000px; border:1px solid black;">
+    <div style="text-align:center">
+        <h1>This is Homer, my pet dog.</h1>
+        <p>Feed, pet, and give water to him to keep him happy</p>
+        <img id="petImg" src="images/download.jpg" alt="Happy Homer">
+
+
+    </div>
+
+
+
+    <div style="position:absolute; top:350px; left:420px;">
+        <h3>Homer's full belly</h3>
+        <meter id="belly-meter" min="0" max="10" value="5"></meter>
+        <p id="belly-paragraph">5</p>
+        <button id="belly-button" onclick="feedPet();"> Feed me!</button>
+    </div>
+
+    <div style="position:absolute; top:350px; left: 50px;">
+        <h3>Homer's happiness</h3>
+        <meter id="happiness-meter" min="0" max="10" value="5"></meter>
+        <p id="happiness-paragraph">5</p>
+        <button id="happiness-button" onclick="petPet();"> Pet me!</button>
+    </div>
+
+    <div style="position:absolute; top:350px; left: 800px;">
+        <h3>Homer's thirstiness</h3>
+        <meter id="thirstiness-meter" min="0" max="10" value="5"></meter>
+        <p id="thirstiness-paragraph">5</p>
+        <button id="thirstiness-button" onclick="waterPet();"> Give me water!</button>
+    </div>
+
+    <script src="js/java.js"></script>
+</body>
+
+
+
+</html>
