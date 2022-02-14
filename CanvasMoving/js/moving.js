@@ -28,7 +28,7 @@ function keyPressed(event) {
 
 let playerX = 200;
 let playerY = 250;
-let playerSpeed = 5;
+let playerSpeed = 6;
 let playerXDirection = 0;
 let playerYDirection = 0;
 const PADDLE_WIDTH = 100;
@@ -81,6 +81,15 @@ function checkBallCollision() {
 
     if (ballX > 500 || ballX < 0) {
         ballXDir = ballXDir * -1;
+    }
+
+    if (ballX + BALL_RADIUS >= playerX &&
+        ballX - BALL_RADIUS <= playerX + PADDLE_WIDTH &&
+        ballY + BALL_RADIUS >= playerY &&
+        ballY - BALL_RADIUS <= playerY + PADDLE_HEIGHT) {
+
+        ballYDir = ballYDir * -1;
+        ballXDIr = ballXDir * -1;
     }
 }
 
