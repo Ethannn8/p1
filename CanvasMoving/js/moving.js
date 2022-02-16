@@ -2,6 +2,9 @@ console.log("hello");
 
 let myCanvas = document.getElementById("my-canvas");
 let ctx = myCanvas.getContext("2d");
+let emoji = document.getElementById("emoji");
+const IMG_WIDTH = 40;
+const IMG_HEIGHT = 40;
 
 
 let keydownOutput = document.getElementById("keydown-output");
@@ -46,6 +49,10 @@ function drawPlayer() {
 
 }
 
+function drawImage() {
+    ctx.drawImage(emoji, ballX, ballY, IMG_WIDTH, IMG_HEIGHT);
+}
+
 function movePlayer() {
     playerX += (playerSpeed * playerXDirection);
     playerY += (playerSpeed * playerYDirection);
@@ -79,7 +86,7 @@ function checkBallCollision() {
         ballYDir = ballYDir * -1;
     }
 
-    if (ballX > 500 || ballX < 0) {
+    if (ballX > 500 - IMG_WIDTH || ballX < 10) {
         ballXDir = ballXDir * -1;
     }
 
@@ -104,7 +111,8 @@ function refreshUI() {
     playerCollision();
     checkBallCollision();
     moveBall();
-    drawBall();
+    //drawBall();
+    drawImage();
 }
 
 function keyReleased(event) {
