@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Game!</title>
+</head>
+
+<body>
+
+    <img id="goomyImg" src="images/goomy.jpg" alt="goomy" style="display: none;">
+    <img id="charzardImg" src="images/charzard.jpg" alt="charzard" style="display: none;">
+
+    <canvas id="my-canvas" width="700 " height="500 " style="border:1px solid black "></canvas>
+
+    <div style="position:absolute; top:420px; left:50px; ">
+        <h3>Move 1</h3>
+        <button id="surf-button " onclick="surfMove(); "> Surf</button>
+    </div>
+
+    <div style="position:absolute; top:420px; left: 200px; ">
+        <h3>Move 2</h3>
+        <button id="thunder-button " onclick="thunderMove(); "> Thunder</button>
+    </div>
+
+    <div style="position:absolute; top:420px; left: 340px; ">
+        <h3>Move 3</h3>
+        <button id="flamethrower-button " onclick="flamethrowerMove(); "> Flamethrower</button>
+    </div>
+
+    <div style="position:absolute; top:420px; left: 500px; ">
+        <h3>Move 4</h3>
+        <button id="bodyslam-button " onclick="bodyslamMove(); "> Body Slam</button>
+    </div>
+
+    <script src="js/poke.js "></script>
+</body>
+
+</html>
