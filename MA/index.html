@@ -10,14 +10,16 @@
 
 <body>
 
-    <img id="goomyImg" src="images/goomy.jpg" alt="goomy" style="display: none;">
-    <img id="charzardImg" src="images/charzard.jpg" alt="charzard" style="display: none;">
+    <img id="goomyImg" src="images/goomy.jpg" alt="goomy" style="visibility: hidden;">
+    <img id="charzardImg" src="images/charzard.jpg" alt="charzard" style="visibility: hidden;">
 
-    <canvas id="my-canvas" width="700 " height="500 " style="border:1px solid black "></canvas>
+
+
+    <canvas id="my-canvas" width="700 " height="500 " style="z-index: -1; position:absolute; border:1px solid black; left:0;"></canvas>
 
     <div style="position:absolute; top:420px; left:50px; ">
         <h3>Move 1</h3>
-        <button id="surf-button " onclick="surfMove(); "> Surf</button>
+        <button id="surf-button " onclick="surf();"> Surf</button>
     </div>
 
     <div style="position:absolute; top:420px; left: 200px; ">
@@ -33,6 +35,18 @@
     <div style="position:absolute; top:420px; left: 500px; ">
         <h3>Move 4</h3>
         <button id="bodyslam-button " onclick="bodyslamMove(); "> Body Slam</button>
+    </div>
+
+    <div style="position:absolute; top:230px; left: 50px;">
+        <h3>Goomy's HP</h3>
+        <meter id="goomy-meter" min="0" max="100" value="100"></meter>
+        <p id="goomy-paragraph"></p>
+    </div>
+
+    <div style="position:absolute; top:3px; left: 470px;">
+        <h3>Charzard's HP</h3>
+        <meter id="charzard-meter" min="0" max="100" value="100"></meter>
+        <p id="charzard-paragraph"></p>
     </div>
 
     <script src="js/poke.js "></script>
