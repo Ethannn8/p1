@@ -38,8 +38,9 @@ function refreshUI() {
 function surf() {
     let goomyThunder = Math.floor(Math.random() * 11 + 5);
     charzardHP = charzardHP - goomyThunder;
-    console.log("It is super affective! Goomy has done: " + goomyThunder + " damage! Charzard now has " + charzardHP + " health left!");
+    console.log("It is super effective! Goomy has done: " + goomyThunder + " damage! Charzard now has " + charzardHP + " health left!");
     unkown();
+    let surfAlert = alert("Surf is super effective! Water moves are effective against fire!")
 
     if (charzardHP < 100) {
         document.getElementById("surf-button ").disabled = true;
@@ -75,6 +76,7 @@ function flamethrowerMove() {
     charzardHP = charzardHP - goomyFlamethrower;
     console.log("Oh no! Flamethrower isn't very effective! Goomy has done: " + goomyFlamethrower + " damage! Charzard now has " + charzardHP + " health left!");
     unkown();
+    let flameAlert = alert("Flamethrower isn't very effective... fire isn't good against fire")
 
     if (charzardHP < 100) {
         document.getElementById("surf-button ").disabled = true;
