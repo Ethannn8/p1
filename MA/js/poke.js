@@ -4,8 +4,8 @@ let ctx = oneCanvas.getContext("2d");
 let IMG_WIDTH = 100;
 let IMG_HEIGHT = 100;
 let replayGame = "yes"
-let goomyHP = 20;
-let charzardHP = 20;
+let goomyHP = 100;
+let charzardHP = 100;
 let charzardAttack = Math.floor(Math.random() * 12 + 7);
 let nIntervID;
 let goomyXPos = 40;
@@ -38,7 +38,7 @@ function refreshUI() {
 function surf() {
     let goomyThunder = Math.floor(Math.random() * 11 + 5);
     charzardHP = charzardHP - goomyThunder;
-    console.log("It is super affective! Goomy has done: " + goomyThunder + "damage! Charzard now has" + charzardHP + "left!");
+    console.log("It is super affective! Goomy has done: " + goomyThunder + " damage! Charzard now has " + charzardHP + " health left!");
     unkown();
 
     if (charzardHP < 100) {
@@ -56,7 +56,7 @@ function surf() {
 function thunderMove() {
     let goomySurf = Math.floor(Math.random() * 11 + 3); //randomizer for attack
     charzardHP = charzardHP - goomySurf; //set charzard HP after I attack
-    console.log("Goomy has done: " + goomySurf + "damage! Charzard now has" + charzardHP + "left!");
+    console.log("Goomy has done: " + goomySurf + " damage! Charzard now has " + charzardHP + " health left!");
     unkown();
 
     if (charzardHP < 100) {
@@ -73,7 +73,7 @@ function thunderMove() {
 function flamethrowerMove() {
     let goomyFlamethrower = Math.floor(Math.random() * 11 + 1);
     charzardHP = charzardHP - goomyFlamethrower;
-    console.log("Oh no! Flamethrower isn't very effective! Goomy has done: " + goomyFlamethrower + "damage! Charzard now has" + charzardHP + "left!");
+    console.log("Oh no! Flamethrower isn't very effective! Goomy has done: " + goomyFlamethrower + " damage! Charzard now has " + charzardHP + " health left!");
     unkown();
 
     if (charzardHP < 100) {
@@ -89,7 +89,7 @@ function flamethrowerMove() {
 function bodyslamMove() {
     let goomyBodyslam = Math.floor(Math.random() * 11 + 2);
     charzardHP = charzardHP - goomyBodyslam;
-    console.log("Goomy has done: " + goomyBodyslam + "damage! Charzard now has" + charzardHP + "left!");
+    console.log("Goomy has done: " + goomyBodyslam + "damage! Charzard now has " + charzardHP + " health left!");
     unkown();
 
     if (charzardHP < 100) {
@@ -141,7 +141,7 @@ function charzardMove() {
     let charzardAttack = Math.floor(Math.random() * 12 + 6);
     goomyHP = goomyHP - charzardAttack;
     unkown();
-    console.log("Charzard has done: " + charzardAttack + "damage! Goomy now has" + goomyHP + "left!");
+    console.log("Charzard has done: " + charzardAttack + " damage! Goomy now has " + goomyHP + " health left!");
     if (goomyHP < 100) {
         document.getElementById("surf-button ").disabled = false;
         document.getElementById("thunder-button ").disabled = false;
@@ -170,16 +170,18 @@ function unkown() {
 function gameover() {
     if (charzardHP <= 0 || goomyHP <= 0) {
 
-        replayGame = prompt("Game over! Would you like to play again?");
+        replayGame = prompt("Game over! Would you like to play again? yes/no");
 
         if (replayGame == "yes") {
             startOver();
 
         } else if (replayGame == "no") {
 
+            let endgame = alert("Sorry you don't want to play again!")
 
             endGame();
             clearInterval(timer);
+
         }
     }
 }
