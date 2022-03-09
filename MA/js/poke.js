@@ -11,16 +11,23 @@ let nIntervID;
 let goomyXPos = 40;
 let goomyYPos = 350;
 
+
 //get my images 
 let keydownOutput = document.getElementById("keydown-output");
 let keyupOutput = document.getElementById("keyup-output");
 let goomy = document.getElementById("goomyImg");
 let charzard = document.getElementById("charzardImg");
 
+let surfOut = document.getElementById("surf-output")
+let thunderOut = document.getElementById("thunder-output")
+let flamethrowerOut = document.getElementById("flamethrower-output")
+let bodyslamOut = document.getElementById("bodyslam-output")
+let charzardOut = document.getElementById("charzard-output")
+
 //draw the image
 function drawImage() {
     ctx.drawImage(goomy, goomyXPos, goomyYPos, IMG_WIDTH, IMG_HEIGHT);
-    ctx.drawImage(charzard, 530, 50, IMG_WIDTH, IMG_HEIGHT);
+    ctx.drawImage(charzard, 530, 220, IMG_WIDTH, IMG_HEIGHT);
 }
 
 
@@ -38,7 +45,7 @@ function refreshUI() {
 function surf() {
     let goomyThunder = Math.floor(Math.random() * 11 + 5);
     charzardHP = charzardHP - goomyThunder;
-    console.log("It is super effective! Goomy has done: " + goomyThunder + " damage! Charzard now has " + charzardHP + " health left!");
+    surfOut.innerHTML = ("Goomy uses surf! It is super effective! Goomy has done: " + goomyThunder + " damage! Charzard now has " + charzardHP + " health left!");
     unkown();
     let surfAlert = alert("Surf is super effective! Water moves are effective against fire!")
 
@@ -57,7 +64,7 @@ function surf() {
 function thunderMove() {
     let goomySurf = Math.floor(Math.random() * 11 + 3); //randomizer for attack
     charzardHP = charzardHP - goomySurf; //set charzard HP after I attack
-    console.log("Goomy has done: " + goomySurf + " damage! Charzard now has " + charzardHP + " health left!");
+    thunderOut.innerHTML = ("Goomy uses thunder! Goomy has done: " + goomySurf + " damage! Charzard now has " + charzardHP + " health left!");
     unkown();
 
     if (charzardHP < 100) {
@@ -74,7 +81,7 @@ function thunderMove() {
 function flamethrowerMove() {
     let goomyFlamethrower = Math.floor(Math.random() * 11 + 1);
     charzardHP = charzardHP - goomyFlamethrower;
-    console.log("Oh no! Flamethrower isn't very effective! Goomy has done: " + goomyFlamethrower + " damage! Charzard now has " + charzardHP + " health left!");
+    flamethrowerOut.innerHTML = ("Oh no! Flamethrower isn't very effective! Goomy has done: " + goomyFlamethrower + " damage! Charzard now has " + charzardHP + " health left!");
     unkown();
     let flameAlert = alert("Flamethrower isn't very effective... fire isn't good against fire")
 
@@ -91,7 +98,7 @@ function flamethrowerMove() {
 function bodyslamMove() {
     let goomyBodyslam = Math.floor(Math.random() * 11 + 2);
     charzardHP = charzardHP - goomyBodyslam;
-    console.log("Goomy has done: " + goomyBodyslam + "damage! Charzard now has " + charzardHP + " health left!");
+    bodyslamOut.innerHTML = ("Goomy uses bodyslam! Goomy has done: " + goomyBodyslam + "damage! Charzard now has " + charzardHP + " health left!");
     unkown();
 
     if (charzardHP < 100) {
@@ -143,7 +150,7 @@ function charzardMove() {
     let charzardAttack = Math.floor(Math.random() * 12 + 6);
     goomyHP = goomyHP - charzardAttack;
     unkown();
-    console.log("Charzard has done: " + charzardAttack + " damage! Goomy now has " + goomyHP + " health left!");
+    charzardOut.innerHTML = ("Charzard has done: " + charzardAttack + " damage! Goomy now has " + goomyHP + " health left!");
     if (goomyHP < 100) {
         document.getElementById("surf-button ").disabled = false;
         document.getElementById("thunder-button ").disabled = false;
@@ -167,6 +174,7 @@ function unkown() {
     charzardHealth.value = charzardHP;
     let charzardParagraph = document.getElementById("charzard-paragraph");
     charzardParagraph.innerHTML = charzardHP;
+
 }
 
 function gameover() {
